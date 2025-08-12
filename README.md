@@ -281,10 +281,6 @@ If your sources vary a lot, normalize to 16 kHz mono WAV:
 **Q: Do I need the `audio/` folder if I’m using the API?**
 **A:** No. `audio/` is only for **batch mode**. API takes direct uploads.
 
-**Q: Can I move `benchmark.py` into a `tools/` folder?**
-**A:** Yes. It’s standalone. Update your run path accordingly (e.g., `python tools/benchmark.py …`).
-GitHub supports folders; if uploading via web UI, create them manually or push via `git`.
-
 **Q: Can I mix Hindi and English in the same call?**
 **A:** Yes. Leave language blank to auto-detect code-switching.
 
