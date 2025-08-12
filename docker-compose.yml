@@ -1,0 +1,22 @@
+
+services:
+  whisper-api:
+    build: .
+    image: whisper-api:local
+    container_name: whisper_api
+    ports:
+      - "8000:8000"
+    environment:
+      - WHISPER_MODEL=medium
+      - DEVICE=auto
+      - COMPUTE_TYPE=
+      - LANG=
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: ["gpu"]
+    command: ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+    volumes:
+      - ./:/app
+    runtime: nvidia
